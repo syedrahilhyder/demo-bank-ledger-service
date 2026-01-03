@@ -1,6 +1,9 @@
 package com.demo.bank.ledger.domain;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.time.Instant;
 import java.util.UUID;
 
@@ -20,8 +23,7 @@ public class LedgerEntry {
 
   protected LedgerEntry() {}
 
-  public LedgerEntry(UUID id, String paymentId, String debitAccount,
-                     String creditAccount, long amountMinor, String currency) {
+  public LedgerEntry(UUID id, String paymentId, String debitAccount, String creditAccount, long amountMinor, String currency) {
     this.id = id;
     this.paymentId = paymentId;
     this.debitAccount = debitAccount;
@@ -32,4 +34,10 @@ public class LedgerEntry {
   }
 
   public UUID getId() { return id; }
+  public String getPaymentId() { return paymentId; }
+  public String getDebitAccount() { return debitAccount; }
+  public String getCreditAccount() { return creditAccount; }
+  public long getAmountMinor() { return amountMinor; }
+  public String getCurrency() { return currency; }
+  public Instant getCreatedAt() { return createdAt; }
 }

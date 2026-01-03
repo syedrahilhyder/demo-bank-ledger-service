@@ -1,13 +1,7 @@
-# demo-bank-ledger-service
+# demo-bank-ledger-service (v2)
 
-Ledger service implementing double-entry accounting.
-
-Tech:
-- Spring Boot 3
-- Java 21
-- Postgres
-- Flyway
-- Kafka producer (LedgerPostedEvent)
-
-## Run
-mvn spring-boot:run
+Ledger service (double-entry posting) with:
+- POST /ledger/post
+- GET /ledger/entries/{paymentId}
+- Postgres + Flyway
+- Kafka producer: LedgerPostedEvent
